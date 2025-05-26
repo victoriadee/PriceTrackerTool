@@ -1,4 +1,5 @@
-PriceTrackerTool
+**PriceTrackerTool**
+
 I've created a comprehensive Price Tracker Tool designed specifically for retail shopkeepers in informal markets. The application helps users track and compare supplier prices to make smarter purchasing decisions.
 
 The tool features a modern, responsive interface with a cohesive color system centered around deep blue and teal accents. The dashboard provides quick access to key metrics and price drop opportunities, while dedicated sections for supplier management, product catalogs, price tracking, and comparison make it easy to organize and analyze pricing data.
