@@ -1,55 +1,190 @@
-**PriceTrackerTool**
+# PriceTracker - Retail Price Management Tool
 
-I've created a comprehensive Price Tracker Tool designed specifically for retail shopkeepers in informal markets. The application helps users track and compare supplier prices to make smarter purchasing decisions.
+A comprehensive price tracking and management solution designed for retail shopkeepers in informal markets. This application helps users monitor supplier prices, compare costs, and make data-driven purchasing decisions.
 
-The tool features a modern, responsive interface with a cohesive color system centered around deep blue and teal accents. The dashboard provides quick access to key metrics and price drop opportunities, while dedicated sections for supplier management, product catalogs, price tracking, and comparison make it easy to organize and analyze pricing data.
+## Features
 
-The application is built with React and TypeScript using modular components for maintainability and scalability. All data is currently stored in memory using React context, which would be replaced with a proper backend database in a production environment.
+### 1. Dashboard
+- Real-time overview of key metrics
+- Price drop opportunities highlighting
+- Quick action shortcuts
+- Today's price update counter
+- Recent activity tracking
 
-Core Features:
+### 2. Supplier Management
+- Add, edit, and delete supplier profiles
+- Contact information storage
+- Supplier-specific notes
+- Search and filter capabilities
+- Address and communication details
 
-Supplier management (add, edit, delete suppliers)
-Product catalog with categories
-Price tracking with history visualization
-Price comparison across multiple suppliers
-Quick price update functionality
-Data export for reporting
-Search and filter capabilities
-Notifications for significant price changes
-Design Elements:
+### 3. Product Catalog
+- Categorized product organization
+- SKU and unit management
+- Product description and details
+- Category-based filtering
+- Quick search functionality
 
-Professional retail-focused interface with a clean, organized layout
-Color system with deep blue primary (#1E40AF), teal accent (#0D9488), with complementary success, warning, and error states
-Subtle animations for transitions and interactions to enhance user experience
-Responsive design optimized for mobile, tablet, and desktop views
-Card-based UI with clear visual hierarchy and intentional white space
-Data visualization with easy-to-read charts for price trends
-Consistent 8px spacing system with proper alignment
-Price Tracker Tool for Retail Shopkeepers
+### 4. Price Tracking
+- Historical price recording
+- Date-based price entries
+- Notes for price changes
+- Filter by product or supplier
+- Price trend visualization
 
-npm install
+### 5. Price Comparison
+- Cross-supplier price analysis
+- Best deal identification
+- Category-based filtering
+- Export functionality
+- Visual price comparison
 
-src/types/index.ts
+### 6. Notifications
+- Price change alerts
+- New supplier notifications
+- System updates
+- Read/unread status tracking
 
-src/data/mockData.ts
+## Technical Stack
 
-src/context/AppContext.tsx
-src/components/ui/Button.tsx
-src/components/ui/Card.tsx
-src/components/ui/Input.tsx
-src/components/ui/Select.tsx
-src/components/ui/Badge.tsx
-src/components/layout/NavBar.tsx
-src/components/dashboard/DashboardOverview.tsx
-src/components/suppliers/SuppliersList.tsx
-src/components/products/ProductsList.tsx
-src/components/prices/PriceTracker.tsx
-src/components/compare/PriceComparison.tsx
-src/App.tsx
-index.html
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **State Management**: React Context
+- **Build Tool**: Vite
 
-npm run dev
+## Getting Started
 
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
+## Project Structure
 
+```
+src/
+├── components/
+│   ├── compare/
+│   ├── dashboard/
+│   ├── layout/
+│   ├── prices/
+│   ├── products/
+│   ├── suppliers/
+│   └── ui/
+├── context/
+├── data/
+└── types/
+```
 
+## Component Documentation
+
+### UI Components
+
+#### Button
+Props:
+- `variant`: 'primary' | 'secondary' | 'outline' | 'danger' | 'success'
+- `size`: 'sm' | 'md' | 'lg'
+- `children`: React.ReactNode
+
+#### Card
+Components:
+- `Card`: Main container
+- `CardHeader`: Header section
+- `CardBody`: Content section
+- `CardFooter`: Footer section
+
+#### Input
+Props:
+- `label`: Optional label text
+- `error`: Optional error message
+- Standard HTML input attributes
+
+#### Select
+Props:
+- `options`: Array of { value: string, label: string }
+- `label`: Optional label text
+- `error`: Optional error message
+- `onChange`: (value: string) => void
+
+#### Badge
+Props:
+- `variant`: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger'
+- `children`: React.ReactNode
+
+## Data Models
+
+### Supplier
+```typescript
+{
+  id: string;
+  name: string;
+  contact: string;
+  phone: string;
+  email: string;
+  address: string;
+  notes: string;
+}
+```
+
+### Product
+```typescript
+{
+  id: string;
+  name: string;
+  category: string;
+  sku: string;
+  description: string;
+  unit: string;
+}
+```
+
+### PriceEntry
+```typescript
+{
+  id: string;
+  productId: string;
+  supplierId: string;
+  price: number;
+  date: string;
+  notes: string;
+}
+```
+
+## Best Practices
+
+1. **Data Entry**
+   - Always include SKU for products
+   - Use consistent units for products
+   - Add notes for significant price changes
+
+2. **Price Tracking**
+   - Record prices regularly
+   - Document reasons for price changes
+   - Monitor trends across suppliers
+
+3. **Supplier Management**
+   - Keep contact information updated
+   - Document communication preferences
+   - Note delivery schedules
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Support
+
+For support, please open an issue in the repository or contact the development team.
