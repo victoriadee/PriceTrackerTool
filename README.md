@@ -30,7 +30,9 @@ Price Tracker Tool for Retail Shopkeepers
 npm install
 
 src/types/index.ts
+
 src/data/mockData.ts
+
 src/context/AppContext.tsx
 src/components/ui/Button.tsx
 src/components/ui/Card.tsx
