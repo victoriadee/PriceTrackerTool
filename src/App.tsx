@@ -13,7 +13,7 @@ function App() {
   const renderContent = () => {
     switch (currentNav) {
       case 'dashboard':
-        return <DashboardOverview />;
+        return <DashboardOverview onNavChange={setCurrentNav} />;
       case 'suppliers':
         return <SuppliersList />;
       case 'products':
@@ -23,7 +23,7 @@ function App() {
       case 'compare':
         return <PriceComparison />;
       default:
-        return <DashboardOverview />;
+        return <DashboardOverview onNavChange={setCurrentNav} />;
     }
   };
 
